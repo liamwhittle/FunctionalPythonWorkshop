@@ -1,6 +1,33 @@
 # Liam's Ultimate Decorator List
 **A list of decorators every python programmer should know**
 
+### Custom Function Decorator Template
+#### :thinking: What to use this for?
+Use this template for any new functional decorator (a decorator which takes a function as argument
+and returns a new, wrapped function.
+
+:computer: usage:
+
+```python
+from functools import wraps
+from typing import Callable
+
+def my_decorator(func: Callable) -> Callable:
+    """
+    My decorator returns a wrapped version of the input func when used like so:
+    @my_decorator
+    def func():
+        ...
+    """
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        // pre-functionality
+        ret_val = func(*args, **kwargs)
+        // post-functionality
+        return ret_val
+    return wrapper
+```
+
 ### `@numba.jit`
 #### :thinking: what does it do?
 JIT stands for Just In Time compilation. Any function you decorate with `numba.jit` will
@@ -16,7 +43,7 @@ compile at runtime to machine code and therefore be able to run a LOT faster.
 
 :no_entry_sign: algorithms which could be vectorized with numpy or torch
 
-:floppy_disk: install with: `pip install numba`
+:floppy_disk: from functools import wraps
 
 :computer: usage:
 
@@ -36,8 +63,6 @@ def longest_increasing_sequence(arr: np.ndarray) -> int:
             max_seq_len = 0
     return max_seq_len
 ```
-
-
 
 ### `@property and @property.setter`
 #### :thinking: what does it do?

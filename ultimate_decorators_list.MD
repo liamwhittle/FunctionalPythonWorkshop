@@ -1,4 +1,4 @@
-# Liam's Ultimate Decorator List
+# Essential List of Decorators
 **A list of decorators every python programmer should know**
 
 ### Custom Function Decorator Template
@@ -21,9 +21,9 @@ def my_decorator(func: Callable) -> Callable:
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
-        // pre-functionality
+        # pre-functionality
         ret_val = func(*args, **kwargs)
-        // post-functionality
+        # post-functionality
         return ret_val
     return wrapper
 ```

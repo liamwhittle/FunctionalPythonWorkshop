@@ -1,4 +1,4 @@
-# Liam's Ultimate Decorator List
+# Essential List of Decorators
 **A list of decorators every python programmer should know**
 
 ### Custom Function Decorator Template

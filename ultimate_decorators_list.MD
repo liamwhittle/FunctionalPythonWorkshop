@@ -21,9 +21,9 @@ def my_decorator(func: Callable) -> Callable:
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
-        // pre-functionality
+        # pre-functionality
         ret_val = func(*args, **kwargs)
-        // post-functionality
+        # post-functionality
         return ret_val
     return wrapper
 ```
